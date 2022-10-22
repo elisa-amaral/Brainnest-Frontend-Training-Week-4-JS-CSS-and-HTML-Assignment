@@ -67,6 +67,64 @@ console.log(`calledAddWithShift: ${calledAddWithShift}`)
 console.log(`decimalPointButton.disabled: ${decimalPointButton.disabled}`)
 console.log(`equalsButton.disabled: ${equalsButton.disabled}`)
 
+function add(firstNumber, secondNumber)
+{
+    const sum = firstNumber + secondNumber
+    return sum
+}
+
+function subtract(firstNumber, secondNumber)
+{
+    const difference = firstNumber - secondNumber
+    return difference
+}
+
+function multiply(firstNumber, secondNumber)
+{
+    const product = firstNumber * secondNumber
+    return product
+}
+
+function divide(firstNumber, secondNumber)
+{
+    const quotient = firstNumber / secondNumber
+    return quotient
+}
+
+function operate(firstNumber, operator, secondNumber)
+{
+    let result
+
+    if (operator === '+')
+    {
+        result = add(firstNumber, secondNumber)
+    }
+    else if (operator === '-')
+    {
+        result = subtract(firstNumber, secondNumber)
+    }
+    else if (operator === '*')
+    {
+        result = multiply(firstNumber, secondNumber)
+    }
+    else if (operator === '/')
+    {
+        if (secondNumber == 0)
+        { 
+            alert(`Hey! Look at what you just did!\n${firstNumber} ÷ 0 = ∞ => x ÷ 0 = ∞ \nSo, please try again.`)
+            backspace()
+            result = firstNumber
+        }
+        else 
+        {
+            result = divide(firstNumber, secondNumber)
+        }
+        
+    }
+
+    return result
+}
+
 function backspace()
 {   
     console.log(`====== backspace() ======`)
@@ -172,64 +230,6 @@ function clearAll()
     clearDisplay()
     clearResult()
     console.log(`====== Cleared All. Starting fresh. ======`)      
-}
-
-function add(firstNumber, secondNumber)
-{
-    const sum = firstNumber + secondNumber
-    return sum
-}
-
-function subtract(firstNumber, secondNumber)
-{
-    const difference = firstNumber - secondNumber
-    return difference
-}
-
-function multiply(firstNumber, secondNumber)
-{
-    const product = firstNumber * secondNumber
-    return product
-}
-
-function divide(firstNumber, secondNumber)
-{
-    const quotient = firstNumber / secondNumber
-    return quotient
-}
-
-function operate(firstNumber, operator, secondNumber)
-{
-    let result
-
-    if (operator === '+')
-    {
-        result = add(firstNumber, secondNumber)
-    }
-    else if (operator === '-')
-    {
-        result = subtract(firstNumber, secondNumber)
-    }
-    else if (operator === '*')
-    {
-        result = multiply(firstNumber, secondNumber)
-    }
-    else if (operator === '/')
-    {
-        if (secondNumber == 0)
-        { 
-            alert(`Hey! Look at what you just did!\n${firstNumber} ÷ 0 = ∞ => x ÷ 0 = ∞ \nSo, please try again.`)
-            backspace()
-            result = firstNumber
-        }
-        else 
-        {
-            result = divide(firstNumber, secondNumber)
-        }
-        
-    }
-
-    return result
 }
 
 function operatorsInputControl(operator)

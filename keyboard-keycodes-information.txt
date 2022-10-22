@@ -1,0 +1,24 @@
+keyCodes with shift, no numpad:
+
+Equal: 187 
+Add : 16 + 187 ((shiftRight || shiftLeft) + Equal) 
+Subtract : 189 
+Multiply : 16 + 8 ((shiftRight || shiftLeft) + number8) 
+Divide : 191 ||193 (some keyboards have the slash key in key 193 that is "?/°")
+Dot (decimal point): 190 
+
+keyCodes in numpad:
+
+Equal: 187
+Add : 107
+Subtract : 109
+Multiply: 107 
+Divide: 111
+Dot (decimal point):  110
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+/* 
+*****************CALCULATOR in pure JS, CSS and HTML**********************
+**************************************************************************
+*************************Developped by Elisa Amaral***********************
+**************************************************************************
+***********************https://github.com/elisa-amaral********************
+************************************************************************** 
+*/
+
+/* All CSS element styling of the project */
+
+*
+{
+  margin: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html
+{
+  scroll-behavior: smooth;
+}
+
+body 
+{
+  margin: 0;
+  background: var(--background-color);
+  font-family: 'Open sans', sans-serif;
+  font-size: 2em;
+  line-height: 1.5em;
+}
+
+::placeholder
+{
+  color: var(--standard-black-color);
+}

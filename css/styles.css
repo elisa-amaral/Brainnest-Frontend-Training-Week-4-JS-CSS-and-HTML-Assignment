@@ -1,0 +1,119 @@
+/* 
+*****************CALCULATOR in pure JS, HTML and CSS**********************
+**************************************************************************
+*************************Developped by Elisa Amaral***********************
+**************************************************************************
+************************https://github.com/elisa-amaral*******************
+************************************************************************** 
+*/
+
+/* All ID and classes styling of the project */
+
+#mainContainer
+{
+  margin: 0 auto;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  background: var(--standard-white-color);
+  border-radius: 15px;
+}
+
+#calculator
+{
+  width: 420px;
+  margin: auto;
+  margin-top: 40px;
+  border: solid 3px var(--dark-green-color);
+  padding: 20px;
+  background-color: var(--main-color);
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px var(--dark-green-color);
+}
+
+#calculator td 
+{
+  padding: 5px;
+}
+
+#display
+{
+  text-align: right;
+  font-size: 30px;
+  color: var(--standard-black-color);
+  background: var(--standard-white-color);
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 2px var(--dark-green);
+  box-shadow: 2px 2px 2px var(--shadow-color);
+}
+
+.button
+{
+  width: 100%;
+  cursor: pointer;
+  height: 55px;
+  background-color: var(--buttons-color);
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px var(--shadow-color);
+}
+
+.button:disabled:hover
+{
+  background-color: var(--buttons-color);
+  cursor: auto;
+}
+
+.button:hover
+{
+  background-color: var(--light-green-color);
+  transition: 300ms ease-in-out;
+}
+
+#calculator span,
+#decimalPoint,
+.operator
+{
+  font-size: 30px;
+  color: var(--standard-white-color);
+}
+
+#decimalPoint,
+#multiply 
+{
+  color: red;
+}
+
+#displayCell
+{
+  text-align: center;
+}
+
+.footer p
+{
+  color: var(--dark-green-color);
+  text-align: center;
+  font-size: 22px;
+  padding: 5px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.footer a
+{
+    text-decoration: underline;
+    color: var(--blue-color);
+}
+
+.footer a:hover
+{
+  color: var(--light-green-color);
+  transition: 300ms ease-in-out;
+}
+
+#heartEntity
+{
+    color: var(--pink-color);
+    font-size: 27px;
+}

@@ -1,0 +1,125 @@
+<!--
+*****************CALCULATOR in pure JS, CSS and HTML**********************
+**************************************************************************
+*************************Developped by Elisa Amaral***********************
+**************************************************************************
+***********************https://github.com/elisa-amaral********************
+************************************************************************** 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator built with pure JavaScript, CSS and CSS</title>
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="./icon.png">
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/variables.css">
+  <link rel="stylesheet" href="./css/elements.css">
+  <link rel="stylesheet" href="./css/styles.css">
+  <!-- JavaScript code WITHOUT live logging through console.log(), comment to deactivate: -->
+  <script type="text/javascript" src="./javascript/calculate.js" defer></script>
+
+  <!-- JavaScript code WITH live logging through console.log(), remove comment to activate: -->
+  <!-- <script type="text/javascript" src="./javascript/version_with_console.log().js" defer></script> -->
+</head>
+<body>
+    <section id="mainContainer">
+        <table id="calculator" cellspacing="3">
+            <tr>
+                <td colspan="4" id="displayCell">
+                    <!-- display -->
+                    <input type="text" id="display" class="form-control" placeholder="0" disabled="disabled">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <!-- clear (C) -->
+                    <button id="clear" onclick="clearAll()" type="button" class="button"><span>Clear</span></button>
+                </td>
+                <td>
+                    <!-- backspace (<<) -->
+                    <button onclick="backspace()" type="button" class="button backspace"><span>&laquo;</span></button>
+                </td>
+                <td>
+                    <!-- sum -->
+                    <button onclick="operatorsInputControl('+')" type="button" id="sumButton" class="button operator"><span>+</span></button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!-- number 7-->
+                    <button onclick="digitsInputControl(7)" type="button" class="button"><span>7</span></button>
+                </td>
+                <td>
+                    <!-- number 8-->
+                    <button onclick="digitsInputControl(8)" type="button" class="button"><span>8</span></button>
+                </td>
+                <td>
+                    <!-- number 9 -->
+                    <button onclick="digitsInputControl(9)" type="button" class="button"><span>9</span></button>
+                </td>
+                <td>
+                    <!-- subtract -->
+                    <button onclick="operatorsInputControl('-')" type="button" id="subtractButton" class="button operator"><span>-</span></button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!-- number 4 -->
+                    <button onclick="digitsInputControl(4)" type="button" class="button"><span>4</span></button>
+                </td>
+                <td>
+                    <!-- number 5 -->
+                    <button onclick="digitsInputControl(5)" type="button" class="button"><span>5</span></button>
+                </td>
+                <td>
+                    <!-- number 6 -->
+                    <button onclick="digitsInputControl(6)" type="button" class="button"><span>6</span></button>
+                </td>
+                <td>
+                    <!-- multiply -->
+                    <button onclick="operatorsInputControl('*')" type="button" id="multiplyButton" class="button operator"><span id="multiply">*</span></button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <!-- number 1-->
+                    <button onclick="digitsInputControl(1)" type="button" class="button"><span>1</span></button>
+                </td>
+                <td>
+                    <!-- number 2-->
+                    <button onclick="digitsInputControl(2)" type="button" class="button"><span>2</span></button>
+                </td>
+                <td>
+                    <!-- number 3-->
+                    <button onclick="digitsInputControl(3)" type="button" class="button"><span>3</span></button>
+                </td>
+                <td>
+                    <!-- divide -->
+                    <button onclick="operatorsInputControl('/')" type="button" id="divideButton" class="button operator"><span>&#247;</span></button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <!-- number 0 -->
+                    <button onclick="digitsInputControl(0)" type="button" class="zeroButton button"><span>0</span></button>
+                </td>
+                <td>
+                    <!-- decimal point -->
+                    <button onclick="digitsInputControl('.')" type="button" class="button" id="decimalPointButton"><span id="decimalPoint">.</span></button>
+                </td>
+                <td>
+                    <!-- equals -->
+                    <button onclick="setResult(true)" id="equals" type="button" class="button"><span>=</span></button>
+                </td>
+            </tr>
+        </table>
+    </section>
+    <footer class="footer">
+        <p>Built with <span id="heartEntity">&#10084;</span> by <a href="https://github.com/elisa-amaral" target="_blank">Elisa Amaral</a></p>
+    </footer>
+</body>
+</html>

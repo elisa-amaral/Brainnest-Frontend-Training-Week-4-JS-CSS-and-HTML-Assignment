@@ -6,6 +6,10 @@ This project is the Week 4 Assignment of the Brainnest Front-End Training. I've 
 
 https://elisa-amaral.github.io/Brainnest-Front-End-Training-Week-4-JS-CSS-and-HTML-Assignment/
 
+## Screenshot
+
+![Screenshot](/images/Screenshot.jpg)
+
 ## Technology Stack
 
 + JavaScript

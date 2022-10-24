@@ -238,6 +238,16 @@ function operatorsInputControl(operator)
     console.log(`operator: ${operator}`)
     console.log(`typeof(operator): ${typeof(operator)}`)
     console.log(`operatorIsSet at function start: ${operatorIsSet}`)
+
+    if (!startedSecondNumberInput)
+    {   
+        if(mathOperation[mathOperation.length - 1] == '.')
+        {
+            mathOperation.pop()
+            display.value = display.value.slice(0, -1)
+            console.log(`!startedSecondNumberInput && added decimal point followed by operator. \nReverse that. \nmathOperation.pop() \ndisplay.value = display.value.slice(0, -1)`)
+        }
+    }
     if (!operatorIsSet && !display.value)
     {  
         console.log(`!operatorIsSet && !display.value`)
@@ -403,7 +413,19 @@ function digitsInputControl(buttonValue)
             console.log(`buttonValue === '.'`)
             addedDecimalPointToFirstNumber = true
         }
+        // else if (display.value[0] === '0' && buttonValue === 0)
+        // {
+        //     display.value[0] = display.value = 0
+        // }
+        // else if (display.value[0] === '0' && display.value[1] !== '0')
+        // {
+        //     display.value += buttonValue
+        // }
+        // else 
+        // {
+        // }
         display.value += buttonValue
+
         console.log(`display.value += buttonValue`)
         console.log(`typeof(buttonValue): ${typeof(buttonValue)}`)
         console.log(`display.value: = ${display.value}`)

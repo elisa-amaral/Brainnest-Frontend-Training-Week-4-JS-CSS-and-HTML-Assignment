@@ -183,6 +183,15 @@ function clearAll()
 
 function operatorsInputControl(operator)
 {   
+    if (!startedSecondNumberInput)
+    {   
+        if(mathOperation[mathOperation.length - 1] == '.')
+        {
+            mathOperation.pop()
+            display.value = display.value.slice(0, -1)
+        }
+    }
+    
     if (!operatorIsSet && !display.value)
     {  
         mathOperation.push(0)

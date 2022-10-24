@@ -15,6 +15,7 @@ let multiplyButton = document.getElementById('multiplyButton')
 let divideButton = document.getElementById('divideButton')
 let decimalPointButton = document.getElementById('decimalPointButton')
 let equalsButton = document.getElementById('equals')
+let zeroButton = document.getElementById('zeroButton')
 let operators = document.getElementsByClassName('operator')
 let mathOperation = []
 let firstNumberDigitsArray = []
@@ -38,6 +39,7 @@ let pressedShift = false
 let calledAddWithShift = false
 let addedDecimalPointToFirstNumber = false
 let addedDecimalPointToSecondNumber = false
+let onlyZerosInFirstNumber = false
 
 // initial control states
 decimalPointButton.disabled = false
@@ -275,6 +277,10 @@ function digitsInputControl(buttonValue)
         }
         else
         {   
+            if (buttonValue === 0) 
+            {
+                onlyZerosInFirstNumber = true
+            }
             display.value = buttonValue
         }
     }
@@ -284,7 +290,16 @@ function digitsInputControl(buttonValue)
         {
             addedDecimalPointToFirstNumber = true
         }
-        display.value += buttonValue
+        
+        if (onlyZerosInFirstNumber && buttonValue === 0)
+        {
+            display.value = buttonValue
+        }
+        else 
+        {
+            onlyZerosInFirstNumber = false
+            display.value += buttonValue
+        }
     }
     else if (display.value && operatorIsSet)
     {   
@@ -292,15 +307,31 @@ function digitsInputControl(buttonValue)
         {
             addedDecimalPointToSecondNumber = true
         }
+
+        if (buttonValue == 0)
+        {   
+            const operatorIndex = mathOperation.length - 1
+            const operators = ['+', '-', '*', '/']
+            for (i = 0; i < 4; i++)
+            {  
+                if (mathOperation[operatorIndex] == operators[i])
+                {
+                   zeroButton.disabled = true
+                }
+            }
+        }
+        else 
+        {
+            zeroButton.disabled = false
+        }
         
-        startedSecondNumberInput = true 
         display.value += buttonValue
+        startedSecondNumberInput = true 
     }
     
     // after updating display, add buttonValue to mathOperation array
     mathOperation.push(buttonValue)
     
-
     // operation buttons working as equals
     if (startedSecondNumberInput)
     {

@@ -15,6 +15,7 @@ let multiplyButton = document.getElementById('multiplyButton')
 let divideButton = document.getElementById('divideButton')
 let decimalPointButton = document.getElementById('decimalPointButton')
 let equalsButton = document.getElementById('equals')
+let zeroButton = document.getElementById('zeroButton')
 let operators = document.getElementsByClassName('operator')
 let mathOperation = []
 let firstNumberDigitsArray = []
@@ -38,6 +39,7 @@ let pressedShift = false
 let calledAddWithShift = false
 let addedDecimalPointToFirstNumber = false
 let addedDecimalPointToSecondNumber = false
+let onlyZerosInFirstNumber = false
 
 // initial control states
 decimalPointButton.disabled = false
@@ -396,7 +398,11 @@ function digitsInputControl(buttonValue)
         }
         else
         {   
-            console.log(`display.value = buttonValue`)
+            if (buttonValue === 0) 
+            {
+                onlyZerosInFirstNumber = true
+                console.log(`onlyZerosInFirstNumber = true`)
+            }
             display.value = buttonValue
         }
 
@@ -413,20 +419,20 @@ function digitsInputControl(buttonValue)
             console.log(`buttonValue === '.'`)
             addedDecimalPointToFirstNumber = true
         }
-        // else if (display.value[0] === '0' && buttonValue === 0)
-        // {
-        //     display.value[0] = display.value = 0
-        // }
-        // else if (display.value[0] === '0' && display.value[1] !== '0')
-        // {
-        //     display.value += buttonValue
-        // }
-        // else 
-        // {
-        // }
-        display.value += buttonValue
+        
+        if (onlyZerosInFirstNumber && buttonValue === 0)
+        {
+            display.value = buttonValue
+            console.log(`onlyZerosInFirstNumber && buttonValue === 0\ndisplay.value = 0`)
+        }
+        else 
+        {
+            onlyZerosInFirstNumber = false
+            display.value += buttonValue
+            console.log(`onlyZerosInFirstNumber = false`)
+            console.log(`display.value += buttonValue`)
+        }
 
-        console.log(`display.value += buttonValue`)
         console.log(`typeof(buttonValue): ${typeof(buttonValue)}`)
         console.log(`display.value: = ${display.value}`)
     }
@@ -439,11 +445,31 @@ function digitsInputControl(buttonValue)
         {
             addedDecimalPointToSecondNumber = true
         }
+
+        if (buttonValue == 0)
+        {   
+            const operatorIndex = mathOperation.length - 1
+            const operators = ['+', '-', '*', '/']
+            for (i = 0; i < 4; i++)
+            {  
+                if (mathOperation[operatorIndex] == operators[i])
+                {
+                   zeroButton.disabled = true
+                   console.log(`startedSecondNumberInput && zeroButton.disabled = true`)
+                }
+            }
+        }
+        else 
+        {
+            console.log(`startedSecondNumberInput && zeroButton.disabled = false`)
+            zeroButton.disabled = false
+        }
+        
+        display.value += buttonValue
         
         startedSecondNumberInput = true 
         console.log(`startedSecondNumberInput: ${startedSecondNumberInput}`)
         
-        display.value += buttonValue
         console.log(`display.value = buttonValue`)
         console.log(`typeof(buttonValue): ${typeof(buttonValue)}`)
         console.log(`display.value: = ${display.value}`)
